@@ -1,0 +1,10 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+node_modules/
+strumenti/
+.sites-runtime/
+.sites-checkout/
+.codex/
+*.log

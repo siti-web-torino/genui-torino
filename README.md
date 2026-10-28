@@ -1,31 +1,47 @@
-# template-vetrina
+# GENUI — Pasticceria in fermento, Torino
 
-Punto di partenza per i siti vetrina one-page dei clienti. Contiene solo le regole
-(`CLAUDE.md`): il sito lo costruisce Claude Code.
+Proposta indipendente di sito vetrina. Repository pubblico creato nell’organizzazione `siti-web-torino` dal template `template-vetrina`, su richiesta dell’utente.
 
-## Nuovo cliente
+## Demo attuale
 
-1. Su GitHub: **Use this template → Create a new repository**, proprietario
-   `siti-web-torino`, nome del cliente in minuscolo con trattini (es. `quartin-torino`).
-   Poi clonalo sul tuo computer.
-2. Copia le foto del cliente (menu, logo, locale, slogan, cose divertenti) in
-   `img-originali/`.
-3. Apri un terminale nella cartella del progetto e lancia `claude` (modello più forte per
-   questa corsa: `/model`).
-4. Incolla il messaggio che ti prepara la chat di avvio, in questa forma:
+https://genui-proposta-torino-271026.modestknoll65.chatgpt.site/
 
-   ```
-   Nuovo cliente: [NOME], [VIA, QUARTIERE], Torino. Tipo: [pizzeria / bar / ...].
-   Note: [quello che sai]
-   Foto in img-originali/.
-   Preferenze mie, facoltative e non vincolanti: [...]
-   Segui CLAUDE.md. Lavora da solo fino alla fine.
-   ```
+Il link è pubblico e non richiede l’accesso a ChatGPT. Questo repository contiene una copia del sito attuale. Gli aggiornamenti non vengono pubblicati automaticamente sulla demo ChatGPT indicata sopra.
 
-5. Al termine leggi, in questo ordine: `RAPPORTO.md`, gli screenshot in `docs/anteprime/`,
-   il menu trascritto in `STUDIO.md` e `DECISIONI.md`.
+## Aprire e modificare il sito
 
-## Perché CLAUDE.md non cambia da solo
-È un normale file di testo. Cambia solo se lo modifichi tu o se chiedi a Claude di farlo
-("aggiungi questa regola al CLAUDE.md"). Ogni nuovo cliente riceve una copia al momento
-della creazione dal template: migliorare il template non cambia i siti già fatti.
+I file pronti da servire sono in `dist/`. Non sono necessari framework, compilazione o installazione di dipendenze.
+
+- `dist/index.html`: testi, contatti, sezioni e riferimenti alle immagini.
+- `dist/styles.css`: colori, tipografia, griglie e adattamento mobile.
+- `dist/app.js`: menu mobile, galleria, biografia, video e note.
+- `dist/assets/`: fotografie, video, logo e font locale con licenza.
+
+Per un’anteprima locale: `python3 -m http.server 8000 --directory dist` e aprire `http://localhost:8000/`.
+
+Il sito mantiene `noindex,nofollow` e il blocco della scansione in `robots.txt`, come nella demo esistente. Non è attivato alcun hosting GitHub Pages.
+
+## Vercel
+
+Il file `vercel.json` prepara il progetto per Vercel: framework Other, cartella di uscita `dist`, nessuna compilazione o installazione, header `X-Robots-Tag: noindex, nofollow`. Importare questo repository con la cartella principale `./` e il ramo di produzione `main`. Una volta collegato il progetto Vercel, i commit sul ramo di produzione attivano il deploy automatico.
+
+Il link Vercel e il primo deploy restano **[DA CONFERMARE]** fino alla verifica della pubblicazione.
+
+## Regole condivise
+
+`CLAUDE.md` è la copia ricevuta dal template. Le modifiche alle regole generali vanno fatte nel template condiviso e poi recepite nei singoli progetti. Il sito è precedente all’importazione nel template: le differenze sono dichiarate nel rapporto, senza attribuire retroattivamente ricerche o verifiche non svolte.
+
+## Da confermare prima della versione ufficiale
+
+- **[DA CONFERMARE]** Approvazione del titolare di GENUI e testi definitivi.
+- **[DA CONFERMARE]** Orari, recapiti, offerta attuale e informazioni biografiche.
+- **[DA CONFERMARE]** Diritti di uso e pubblicazione delle fotografie e dei video; consenso per il ritratto riconoscibile del fondatore.
+- **[DA CONFERMARE]** Logo ufficiale: il file attuale è una ricostruzione precedente dell’insegna.
+- **[DA CONFERMARE]** Dati legali e informativa privacy definitiva.
+- **[DA CONFERMARE]** Responsabile del progetto, referente commerciale e hosting definitivo.
+
+Non è allegata una licenza che conceda il riutilizzo di foto, video o marchio. La visibilità pubblica del repository non equivale a un’autorizzazione al loro riutilizzo.
+
+## Documentazione
+
+Leggere `RAPPORTO.md`, `STUDIO.md`, `DECISIONI.md`, `MATERIALI.md` e `VERIFICHE.md`. `LEGGIMI.md` conserva le note della versione importata.

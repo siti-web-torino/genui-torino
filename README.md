@@ -1,47 +1,46 @@
-# GENUI — Pasticceria in fermento, Torino
+# GENUI — Pasticceria in fermento
 
-Proposta indipendente di sito vetrina. Repository pubblico creato nell’organizzazione `siti-web-torino` dal template `template-vetrina`, su richiesta dell’utente.
+Sito: https://genui-torino.vercel.app/
+Repository esistente: https://github.com/siti-web-torino/genui-torino
 
-## Demo attuale
+## Revisione editoriale — 3 novembre 2026
 
-https://genui-proposta-torino-271026.modestknoll65.chatgpt.site/
+Nuova direzione richiesta: fondo video immersivo su tutto il sito, nero e vetro, titoli Cormorant Garamond e testo DM Sans. Il video non è più un riquadro nella hero: è un livello fisso a tutto schermo, sotto il color grading e il contenuto.
 
-Il link è pubblico e non richiede l’accesso a ChatGPT. Questo repository contiene una copia del sito attuale. Gli aggiornamenti non vengono pubblicati automaticamente sulla demo ChatGPT indicata sopra.
+Tutti i file già presenti in dist/assets/ sono conservati senza modifiche: fotografie, ritratto, logo, video e poster. Non sono state generate nuove immagini. La loro provenienza precedente resta descritta in MATERIALI.md.
 
-## Aprire e modificare il sito
+## Sorgenti
 
-I file pronti da servire sono in `dist/`. Non sono necessari framework, compilazione o installazione di dipendenze.
+- dist/index.html: sette sezioni, testi, immagini, didascalie, href, biografia completa, orari e richieste WhatsApp scritti direttamente nell’HTML. Gallery statica con layers.webp, fruit.webp, raspberry.webp e display.webp.
+- dist/styles.css: impianto editoriale, pannelli in vetro scuro, video fisso, contrasto, microinterazioni, layout responsive e movimento ridotto.
+- dist/app.js: navigazione mobile, lightbox, controllo del video, microfade tra 0,85 e 1 ai due estremi del loop, linee animate allo scroll.
 
-- `dist/index.html`: testi, contatti, sezioni e riferimenti alle immagini.
-- `dist/styles.css`: colori, tipografia, griglie e adattamento mobile.
-- `dist/app.js`: menu mobile, galleria, biografia, video e note.
-- `dist/assets/`: fotografie, video, logo e font locale con licenza.
+Nessuna installazione o compilazione. Servire dist/ con un server HTTP che supporti video/mp4 e richieste Range. Sintassi: node --check dist/app.js.
 
-Per un’anteprima locale: `python3 -m http.server 8000 --directory dist` e aprire `http://localhost:8000/`.
+DM Sans è ospitato localmente. Cormorant Garamond 400/600, normale e corsivo, viene caricato da Google Fonts come richiesto nel brief; in assenza di rete restano i fallback serif. Questa scelta esplicita sostituisce per questo font la regola generale del template sui CDN.
 
-Il sito mantiene `noindex,nofollow` e il blocco della scansione in `robots.txt`, come nella demo esistente. Non è attivato alcun hosting GitHub Pages.
+## Video
 
-## Vercel
+assets/genui-hero.mp4 mantiene i pixel e il montaggio del file esistente. Attributi autoplay, loop, muted, playsinline, preload auto e poster locale. Il player forza il tentativo di riproduzione al caricamento, gestendo un eventuale rifiuto del browser. Un controllo fisso permette pausa/ripresa. Il video resta attivo durante lo scorrimento, viene sospeso a scheda nascosta e rispetta il movimento ridotto. Senza app.js o senza JavaScript il poster resta come sfondo statico; testi e immagini restano leggibili.
 
-Il file `vercel.json` prepara il progetto per Vercel: framework Other, cartella di uscita `dist`, nessuna compilazione o installazione, header `X-Robots-Tag: noindex, nofollow`. Importare questo repository con la cartella principale `./` e il ramo di produzione `main`. Una volta collegato il progetto Vercel, i commit sul ramo di produzione attivano il deploy automatico.
+Il microfade attenua il passaggio al riavvolgimento; non cambia né ricrea il montaggio originale e non promette un raccordo fisico tra fotogrammi diversi.
 
-Il link Vercel e il primo deploy restano **[DA CONFERMARE]** fino alla verifica della pubblicazione.
+## Contenuti e contatti
 
-## Regole condivise
+Il nuovo brief fornisce la descrizione delle creazioni, ingredienti, servizi, Bauletto e grandi lievitati. La scheda Maps è stata riscontrata il 3 novembre 2026: 4,5 stelle con 311 recensioni, telefono 338 831 4564, apertura martedì–domenica 08–19 e lunedì chiuso. Fonte: https://maps.app.goo.gl/hcZBAPaypNwLetwn7 . Il badge riporta «oltre 310 recensioni». Nessuna valutazione autoattribuita nei dati strutturati.
 
-`CLAUDE.md` è la copia ricevuta dal template. Le modifiche alle regole generali vanno fatte nel template condiviso e poi recepite nei singoli progetti. Il sito è precedente all’importazione nel template: le differenze sono dichiarate nel rapporto, senza attribuire retroattivamente ricerche o verifiche non svolte.
+Indirizzo completo del brief e delle fonti precedenti: Corso Francia 105 bis/B, 10138 Torino. La scheda Maps abbrevia il civico a 105. Biografia e prodotti riprendono il brief e le fonti conservate in LEGGIMI.md; non sono stati aggiunti premi, prezzi o recensioni inventate.
 
-## Da confermare prima della versione ufficiale
+Tre richieste WhatsApp statiche, con messaggi distinti: Monoporzioni, Viennoiserie, Grandi Lievitati. L’invio avviene dall’utente dentro WhatsApp e la disponibilità va concordata con il negozio. Nessun ordine o messaggio è stato inviato durante le prove.
 
-- **[DA CONFERMARE]** Approvazione del titolare di GENUI e testi definitivi.
-- **[DA CONFERMARE]** Orari, recapiti, offerta attuale e informazioni biografiche.
-- **[DA CONFERMARE]** Diritti di uso e pubblicazione delle fotografie e dei video; consenso per il ritratto riconoscibile del fondatore.
-- **[DA CONFERMARE]** Logo ufficiale: il file attuale è una ricostruzione precedente dell’insegna.
-- **[DA CONFERMARE]** Dati legali e informativa privacy definitiva.
-- **[DA CONFERMARE]** Responsabile del progetto, referente commerciale e hosting definitivo.
+## SEO e pubblicazione
 
-Non è allegata una licenza che conceda il riutilizzo di foto, video o marchio. La visibilità pubblica del repository non equivale a un’autorizzazione al loro riutilizzo.
+Canonical, Open Graph e dati strutturati Bakery puntano al dominio Vercel attuale. Title, description, indirizzo, telefono e orari sono statici. La richiesta SEO/GEO sostituisce il blocco noindex della vecchia demo: robots.txt e sitemap consentono la scansione. L’indicizzazione effettiva dipende dai motori di ricerca.
 
-## Documentazione
+Si aggiorna la stessa repository, ramo main, attraverso l’integrazione Vercel già esistente: cartella dist, nessun build o install. Non viene creato un nuovo progetto e la precedente copia ChatGPT Sites non viene aggiornata automaticamente.
 
-Leggere `RAPPORTO.md`, `STUDIO.md`, `DECISIONI.md`, `MATERIALI.md` e `VERIFICHE.md`. `LEGGIMI.md` conserva le note della versione importata.
+## Verifiche e materiali
+
+Consultare VERIFICHE.md e docs/anteprime/editoriale-video/. Layout provato a 390, 768 e 1280px. Gallery e lightbox, controlli del video e collegamenti statici verificati. La biografia non è nascosta in un details.
+
+Restano da completare per una versione ufficiale i dati legali, l’informativa definitiva e la conferma del titolare sui materiali e sull’offerta attuale. Il logo e le fotografie mantengono le lavorazioni già presenti: nessun nuovo intervento IA sui media.

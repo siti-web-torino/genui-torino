@@ -8,3 +8,4 @@ strumenti/
 .sites-checkout/
 .codex/
 *.log
+dist/qa.html

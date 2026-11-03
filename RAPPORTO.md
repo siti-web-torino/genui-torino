@@ -1,27 +1,11 @@
-# Rapporto di importazione — 28 ottobre 2026
+# GENUI — revisione editoriale, 3 novembre 2026
 
-## Pronto
+Pronto il redesign della stessa repository genui-torino: video fisso a schermo intero su tutto il sito, grading cinematografico, vetro scuro, titoli Cormorant Garamond, fotografie con zoom lento e numeri editoriali.
 
-Importato il sito attuale di GENUI nella sua revisione minimale: fondo chiaro uniforme, testi scuri, tipografia DM Sans, griglie e margini coerenti. Conservati contenuti, fotografie, video, galleria, menu mobile e biografia espandibile.
+Contenuti completati in HTML statico: sette sezioni, tre famiglie di creazioni, ingredienti e filosofia, biografia leggibile, quattro immagini in gallery con lightbox, orari attuali, servizi e tre richieste WhatsApp. Canonical e dati SEO allineati a genui-torino.vercel.app.
 
-Origine: checkout Sites `genui`, commit `490a4e62addd3d72106c7018d64f0be7bee27646`, versione pubblicata 4. I file dentro `dist/` vengono copiati senza modifiche rispetto a questa versione. La creazione della repo non pubblica una nuova versione del sito e non attiva GitHub Pages.
+Controllare per primo: il rapporto fra video e testo sulla prima schermata, il funzionamento della pausa e della gallery e le richieste WhatsApp. Le verifiche responsive sono in VERIFICHE.md e docs/anteprime/editoriale-video/.
 
-## Controllare per primo
+Tutti i media esistenti sono preservati. Nessuna nuova foto, ritocco IA, prenotazione o messaggio reale. Il video resta il file di cinque secondi fornito: la sfumatura attenua il riavvolgimento senza modificare i fotogrammi.
 
-1. La resa mobile della prima schermata e delle creazioni.
-2. I dati segnalati **[DA CONFERMARE]** nel README.
-3. La provenienza e le autorizzazioni dei materiali.
-
-## Differenze rispetto al template
-
-È un’importazione di un sito preesistente, non una nuova esecuzione della pipeline. La struttura è `dist/` con HTML, CSS, JavaScript e asset locali. I contenuti non sono ancora centralizzati in un solo oggetto JavaScript. La demo conserva una mappa caricabile su richiesta tramite iframe, mentre il template prevede il solo link a Maps. Il logo era già stato ricostruito; le fotografie erano già state rielaborate con IA. Il consenso del ritratto va confermato. Questi elementi richiedono revisione prima della versione ufficiale.
-
-## Verifiche disponibili
-
-Sintassi JavaScript, risorse e collegamenti interni verificati. Sono stati eseguiti controlli visivi desktop e in un iframe a larghezza mobile, con prova del menu, del video, della galleria e della biografia. Dettagli in `VERIFICHE.md`. Non sono presenti screenshot archiviati a tutte e tre le larghezze richieste dal template; non viene dichiarato il completamento di quella fase.
-
-## Cosa non si sa
-
-Non sono disponibili in questo checkout gli originali fotografici, una conferma dei diritti, il marchio ufficiale, gli orari o l’approvazione del titolare. La ricerca comparativa di 6–10 attività richiesta dal template non è stata rifatta per questa importazione.
-
-L’IA conosce gli schemi che funzionano, ma non misura la clientela reale di questo locale: il risultato va mostrato a 2–3 persone vere e al cliente prima di considerarlo giusto.
+Limiti: disponibilità dei prodotti, dati legali e conferma definitiva del titolare non vengono inventati. L’IA conosce gli schemi che funzionano ma non misura la clientela reale di GENUI: il risultato va fatto vedere a 2–3 persone vere e al cliente.

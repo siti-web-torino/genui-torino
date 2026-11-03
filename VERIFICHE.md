@@ -1,17 +1,18 @@
-# Verifiche — revisione del 28 ottobre 2026
+# GENUI — verifica della revisione editoriale del 3 novembre 2026
 
-## Controlli completati
+Storia: il visitatore entra sopra un video immersivo, legge l’offerta, scopre il fondatore, apre la gallery e prepara una richiesta WhatsApp per il ritiro.
 
-- Sintassi JavaScript verificata con `node --check dist/app.js`.
-- HTML: un solo H1, ID univoci, collegamenti interni validi, riferimenti a immagini/font/video/stili/script esistenti e testi alternativi presenti sulle immagini.
-- Palette CSS centralizzata: fondo, testo, testo secondario, divisori e superficie della mappa sono tutti neutri.
-- Controllo visivo nel browser desktop (finestra 1363 px; area documento 1348 px) e in un iframe mobile largo 390 px, con area utile 375 px per la barra di scorrimento.
-- Nessuno sbordo orizzontale nel documento desktop o mobile. Controllati anche i limiti dei titoli, dei paragrafi e delle immagini mobile.
-- Menu mobile aperto e chiuso selezionando Creazioni; stato ARIA aggiornato e blocco dello scorrimento rimosso alla chiusura.
-- Video: riproduzione automatica silenziosa e pausa manuale osservate; il comando passa da Pausa a Riproduci. Movimento ridotto e sospensione fuori vista gestiti nel codice.
-- Galleria aperta, fotografia successiva caricata e finestra chiusa.
-- Biografia completa aperta dal controllo Il percorso.
+- Sintassi JavaScript verificata con node --check dist/app.js.
+- Nessuna modifica in dist/assets/: video, poster, logo e fotografie esistenti preservati.
+- Video: attributi autoplay/loop/muted/playsinline/preload auto, durata rilevata 5 s, readyState 4, riproduzione attiva; bounding box fisso 1280×720 e top 0 anche scorrendo oltre la hero. Pulsante pausa/ripresa funzionante.
+- Serif Cormorant Garamond caricato e applicato ai titoli; DM Sans locale.
+- Hero su desktop 1280×720 corretta a 720px di altezza, barra reputazione entro la finestra. Mobile 390×844 senza overflow e con barra entro la schermata.
+- Lightbox: prima immagine aperta correttamente, successiva con contatore 02/04, chiusura via Escape e sblocco dello scorrimento.
+- Menu mobile apribile e richiudibile via Escape.
+- Quattro gallery item già nell’HTML con immagini, alt, href e didascalie. Biografia completa visibile senza apertura di dettagli.
+- Nessun asset locale mancante, ID duplicato, ancora rotta o about:invalid. Canonical Vercel, schema Bakery con telefono e sei giorni 08–19.
+- WhatsApp: tre messaggi distinti, numero 393388314564 e testi URL codificati; nessun messaggio inviato.
+- Senza JavaScript: contenuti statici, gallery, telefono e WhatsApp disponibili; poster al posto del movimento. Movimento ridotto gestito nel CSS e nel controllo del player.
+- Screenshot a 390, 768 e 1280px in docs/anteprime/editoriale-video/.
 
-La verifica mobile usa il browser in un iframe a larghezza controllata, non un dispositivo fisico. La mappa esterna e i collegamenti telefonici non sono stati attivati. Nessun audit completo di accessibilità, prestazioni o compatibilità tra browser è dichiarato.
-
-Le pagine temporanee usate per la verifica responsive vengono rimosse prima della preparazione del pacchetto pubblicato.
+Non sono state verificate disponibilità reale o richieste commerciali. Il microfade ammorbidisce il loop nativo, non modifica il montaggio. Il caricamento del font Google richiede rete; i fallback serif restano disponibili.

@@ -13,7 +13,7 @@ Tutti i file già presenti in dist/assets/ sono conservati senza modifiche: foto
 
 - dist/index.html: sette sezioni, testi, immagini, didascalie, href, biografia completa, orari e richieste WhatsApp scritti direttamente nell’HTML. Gallery statica con layers.webp, fruit.webp, raspberry.webp e display.webp.
 - dist/styles.css: impianto editoriale, pannelli in vetro scuro, video fisso, contrasto, microinterazioni, layout responsive e movimento ridotto.
-- dist/app.js: navigazione mobile, lightbox, controllo del video, microfade tra 0,85 e 1 ai due estremi del loop, linee animate allo scroll.
+- dist/app.js: navigazione mobile, lightbox, microfade tra 0,85 e 1 ai due estremi del loop, linee animate allo scroll.
 
 Nessuna installazione o compilazione. Servire dist/ con un server HTTP che supporti video/mp4 e richieste Range. Sintassi: node --check dist/app.js.
 
@@ -21,7 +21,7 @@ DM Sans è ospitato localmente. Cormorant Garamond 400/600, normale e corsivo, v
 
 ## Video
 
-assets/genui-hero.mp4 mantiene i pixel e il montaggio del file esistente. Attributi autoplay, loop, muted, playsinline, preload auto e poster locale. Il player forza il tentativo di riproduzione al caricamento, gestendo un eventuale rifiuto del browser. Un controllo fisso permette pausa/ripresa. Il video resta attivo durante lo scorrimento, viene sospeso a scheda nascosta e rispetta il movimento ridotto. Senza app.js o senza JavaScript il poster resta come sfondo statico; testi e immagini restano leggibili.
+Il video di sfondo parte in automatico, senza audio e in loop, anche durante lo scorrimento. Il poster locale fa da sfondo durante il caricamento e quando è attivo il movimento ridotto.
 
 Il microfade attenua il passaggio al riavvolgimento; non cambia né ricrea il montaggio originale e non promette un raccordo fisico tra fotogrammi diversi.
 
@@ -41,6 +41,6 @@ Si aggiorna la stessa repository, ramo main, attraverso l’integrazione Vercel 
 
 ## Verifiche e materiali
 
-Consultare VERIFICHE.md e docs/anteprime/editoriale-video/. Layout provato a 390, 768 e 1280px. Gallery e lightbox, controlli del video e collegamenti statici verificati. La biografia non è nascosta in un details.
+Consultare VERIFICHE.md e docs/anteprime/editoriale-video/. Layout provato a 390, 768 e 1280px. Gallery, lightbox e collegamenti statici verificati nella revisione editoriale. La biografia non è nascosta in un details.
 
 Restano da completare per una versione ufficiale i dati legali, l’informativa definitiva e la conferma del titolare sui materiali e sull’offerta attuale. Il logo e le fotografie mantengono le lavorazioni già presenti: nessun nuovo intervento IA sui media.

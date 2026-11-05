@@ -78,34 +78,7 @@
   });
 
   const film = document.querySelector('#site-film');
-  const control = document.querySelector('.video-control');
   const reduced = matchMedia('(prefers-reduced-motion:reduce)');
-  let userPaused = false;
-  control.hidden = false;
-  film.muted = true;
-  film.defaultMuted = true;
-  film.playsInline = true;
-  function updateControl() {
-    const active = !film.paused && !film.error;
-    control.setAttribute('aria-pressed', String(active));
-    control.setAttribute('aria-label', active ? 'Metti in pausa il video di sfondo' : 'Riproduci il video di sfondo');
-    control.querySelector('.video-control-mark').textContent = active ? 'Ⅱ' : '▷';
-    control.querySelector('.video-control-label').textContent = active ? 'Pausa video' : 'Riproduci video';
-  }
-  const attemptPlay = () => { const playback = film.play(); if (playback?.catch) playback.catch(updateControl); };
-  function syncFilm() {
-    if (!reduced.matches && !userPaused && !document.hidden) attemptPlay();
-    else film.pause();
-    updateControl();
-  }
-  control.addEventListener('click', () => {
-    if (film.paused) { userPaused = false; document.body.classList.add('motion-consented'); attemptPlay(); }
-    else { userPaused = true; film.pause(); document.body.classList.remove('motion-consented'); }
-  });
-  film.addEventListener('loadeddata', syncFilm);
-  film.addEventListener('play', updateControl);
-  film.addEventListener('pause', updateControl);
-  film.addEventListener('error', updateControl);
   // La stessa opacità ai due estremi attenua il passaggio sul loop nativo.
   film.addEventListener('timeupdate', () => {
     if (reduced.matches || !Number.isFinite(film.duration) || film.duration <= 0) { film.style.opacity = '1'; return; }
@@ -113,7 +86,4 @@
     const edge = Math.min(film.currentTime, Math.max(0, film.duration - film.currentTime));
     film.style.opacity = String(.85 + .15 * Math.min(1, edge / fade));
   });
-  reduced.addEventListener('change', () => { document.body.classList.remove('motion-consented'); syncFilm(); });
-  document.addEventListener('visibilitychange', syncFilm);
-  syncFilm();
 })();
